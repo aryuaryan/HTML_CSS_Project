@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Restaurant</title>
+    <link rel="stylesheet" href="css.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#restaurant">Restaurant</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>LOREM IPSUM</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id est vitae dolor rhoncus tristique. Maecenas metus quam, rhoncus euismod lorem in, sollicitudin viverra eros. Donec dictum luctus quam ut tristique. Curabitur nec faucibus purus. Quisque congue sem nec justo mollis, in tincidunt erat pretium. Sed pulvinar, massa ac porta viverra.</p>
+                <button class="cta-btn">Click Me</button>
+            </div>
+            <div class="hero-image">
+                <img src="/pexels-robin-stickel-70497.jpg" />
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-left">
+                        <img src="/pexels-rachel-claire-6752433.jpg" />
+                        <img src="/pexels-eva-bronzini-6141651.jpg" />
+                    </div>
+                    <div class="gallery-right">
+                        <img src="/pexels-mister-mister-3434523.jpg" />
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <p class="subtitle">LOREM IPSUM</p>
+                    <h2>LOREM IPSUM<br>SET ADEMIR</h2>
+                    <a href="#" class="gallery-cta">
+                        Click <img src="icons8-arrow-30.png" alt="arrow" class="arrow" style="width:20px;height:20px;vertical-align:middle;" />
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
